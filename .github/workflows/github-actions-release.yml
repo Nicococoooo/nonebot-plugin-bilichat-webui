@@ -28,8 +28,12 @@ jobs:
         with:
           name: dist
           path: dist
+
+      - name: Zip Artifacts
+        run: zip -r artifacts.zip dist
+
       - name: Upload Release Asset
         id: upload-release-asset
         uses: softprops/action-gh-release@v1
         with:
-          files: dist
+          files: artifacts.zip
