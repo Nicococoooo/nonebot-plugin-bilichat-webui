@@ -28,12 +28,8 @@ jobs:
         with:
           name: dist
           path: dist
-
-      - name: Archive production artifacts
-        run: tar -czvf dist.tar.gz dist
-
       - name: Upload Release Asset
         id: upload-release-asset
         uses: softprops/action-gh-release@v1
         with:
-          files: dist.tar.gz
+          files: dist
